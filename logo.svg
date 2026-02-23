@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 80" width="360" height="80" role="img" aria-label="Summer World Management Consultancy">
+
+  <!--
+    Summer World — full horizontal wordmark
+    ─────────────────────────────────────────
+    Colours:
+      Navy  #1B2D3E
+      Gold  #C8902C
+
+    Variants:
+      • On dark background  → change all #1B2D3E text fills to #FFFFFF
+      • Icon-only mark      → copy the <g id="mark"> element alone
+
+    Fonts used for display (web / Figma):
+      Wordmark : Cormorant Garamond 600 (serif fallback: Georgia)
+      Tagline  : Inter 600 (sans fallback: Arial)
+  -->
+
+  <!-- ─── MARK (sunburst, center 36 40) ─── -->
+  <g id="mark">
+    <!-- Cardinal rays (N S E W) -->
+    <line x1="36" y1="22" x2="36" y2="15" stroke="#C8902C" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="36" y1="58" x2="36" y2="65" stroke="#C8902C" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="50" y1="40" x2="57" y2="40" stroke="#C8902C" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="22" y1="40" x2="15" y2="40" stroke="#C8902C" stroke-width="2.4" stroke-linecap="round"/>
+
+    <!-- Diagonal rays (NE SE SW NW) — slightly shorter -->
+    <line x1="47.9" y1="27.1" x2="52.9" y2="22.1" stroke="#C8902C" stroke-width="1.9" stroke-linecap="round"/>
+    <line x1="47.9" y1="52.9" x2="52.9" y2="57.9" stroke="#C8902C" stroke-width="1.9" stroke-linecap="round"/>
+    <line x1="24.1" y1="52.9" x2="19.1" y2="57.9" stroke="#C8902C" stroke-width="1.9" stroke-linecap="round"/>
+    <line x1="24.1" y1="27.1" x2="19.1" y2="22.1" stroke="#C8902C" stroke-width="1.9" stroke-linecap="round"/>
+
+    <!-- Halo -->
+    <circle cx="36" cy="40" r="11" fill="#C8902C" fill-opacity="0.10"/>
+    <!-- Core -->
+    <circle cx="36" cy="40" r="7"  fill="#C8902C"/>
+  </g>
+
+  <!-- ─── DIVIDER ─── -->
+  <line x1="76" y1="20" x2="76" y2="60" stroke="#C8902C" stroke-width="0.8" stroke-linecap="round"/>
+
+  <!-- ─── WORDMARK ─── -->
+  <text
+    x="90" y="39"
+    font-family="'Cormorant Garamond', Georgia, 'Times New Roman', serif"
+    font-size="27"
+    font-weight="600"
+    fill="#1B2D3E"
+    letter-spacing="3"
+  >SUMMER WORLD</text>
+
+  <!-- ─── TAGLINE ─── -->
+  <text
+    x="92" y="57"
+    font-family="'Inter', Arial, Helvetica, sans-serif"
+    font-size="8"
+    font-weight="600"
+    fill="#C8902C"
+    letter-spacing="3.5"
+  >MANAGEMENT CONSULTANCY</text>
+
+</svg>
