@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="alternate" hreflang="en" href="https://summerworld.club/" />
+  <link rel="alternate" hreflang="pt-PT" href="https://summerworld.club/pt/" />
   <title>Summer World · Management &amp; AI Consultancy</title>
   <meta name="description" content="Summer World is a boutique management and AI consultancy: process redesign, operational excellence and practical AI automation, from someone who runs AI in his own businesses every day." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -906,6 +908,7 @@
     <a href="#built" onclick="closeMobile()">AI in Practice</a>
     <a href="#approach" onclick="closeMobile()">Approach</a>
     <a href="#contact" onclick="closeMobile()">Let's Talk</a>
+    <a href="/pt/" hreflang="pt-PT" lang="pt-PT">Português</a>
   </div>
 
   <!-- ═══════════════════════════════
@@ -940,6 +943,7 @@
       <li><a href="#services">Services</a></li>
       <li><a href="#built">AI in Practice</a></li>
       <li><a href="#approach">Approach</a></li>
+      <li><a href="/pt/" hreflang="pt-PT" lang="pt-PT">PT</a></li>
       <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
     </ul>
 
@@ -1036,7 +1040,7 @@
 
     <div class="about-visual reveal reveal-delay-2">
       <div class="photo-frame">
-        <img src="photo.jpg" alt="Baris — Founder &amp; Principal Consultant, Summer World" style="width:100%;height:100%;object-fit:cover;object-position:center top;transform:scaleX(-1);" />
+        <img src="/photo.jpg" alt="Baris — Founder &amp; Principal Consultant, Summer World" style="width:100%;height:100%;object-fit:cover;object-position:center top;transform:scaleX(-1);" />
       </div>
 
       <div class="photo-caption">
@@ -1225,20 +1229,17 @@
     </div>
 
     <div class="reveal reveal-delay-1">
-      <!-- ── NETLIFY FORM ──
-           Works automatically on Netlify's free tier (100 submissions/month).
-           No plugins, no paid add-ons needed.
+      <!-- ── CONTACT FORM ── posts JSON to /api/contact (Vercel function → Resend email to Baris).
+
+
       ── -->
       <div class="cform" id="contactFormWrap">
         <form
           name="contact"
           method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
           id="contactForm"
         >
-          <!-- Required hidden fields for Netlify Forms -->
-          <input type="hidden" name="form-name" value="contact" />
+          <!-- Honeypot: bots fill it, people do not -->
           <p style="display:none"><label>Do not fill: <input name="bot-field" /></label></p>
 
           <div class="frow">
@@ -1280,6 +1281,7 @@
           <div class="form-submit-wrap">
             <button type="submit" class="fsubmit">Send Message</button>
           </div>
+          <p id="formError" style="display:none;margin-top:1rem;font-size:.85rem;color:#B5482B;">Something went wrong and your message wasn't sent. Please email <a href="mailto:baris@summerworld.club">baris@summerworld.club</a> instead.</p>
         </form>
 
         <!-- Success state (shown after AJAX submission) -->
@@ -1288,7 +1290,7 @@
             <circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="1.5"/>
             <path d="M14 24l7 7 13-14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          <h4>Almost there.</h4>
+          <h4>Message received.</h4>
           <p>Thank you for reaching out — I'll be in touch shortly.</p>
         </div>
       </div>
@@ -1358,7 +1360,7 @@
     );
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    /* ── Contact form — Netlify AJAX submission ──
+    /* ── Contact form → /api/contact ──
          Submits without page redirect; shows inline thank-you message.
     ── */
     const form   = document.getElementById('contactForm');
@@ -1368,20 +1370,27 @@
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = form.querySelector('.fsubmit');
-      btn.textContent = 'Sending…';
+      btn.textContent = document.documentElement.lang.startsWith('pt') ? 'A enviar…' : 'Sending…';
       btn.disabled = true;
 
-      // The site is on Vercel (no Netlify Forms), so the old POST to "/" returned 405 and
-      // messages were silently lost. Open the visitor's email app, addressed to Baris, instead.
-      const f = new FormData(form);
-      const subject = 'Summer World enquiry' + (f.get('service') ? ': ' + f.get('service') : '');
-      const body = [f.get('message'), '', '—', f.get('name'), f.get('company'), f.get('email')]
-        .filter((x) => x !== null && x !== undefined).join('\n');
-      window.location.href = 'mailto:baris@summerworld.club?subject=' + encodeURIComponent(subject) +
-        '&body=' + encodeURIComponent(body);
-      form.style.display = 'none';
-      thanks.querySelector('p').textContent = "Your email app should open with the message ready to send. If it doesn't, write to baris@summerworld.club.";
-      thanks.classList.add('show');
+      const pt = document.documentElement.lang.startsWith('pt');
+      const data = Object.fromEntries(new FormData(form).entries());
+      data.lang = pt ? 'pt' : 'en';
+      try {
+        const r = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+        if (!r.ok) throw new Error(String(r.status));
+        form.style.display = 'none';
+        thanks.classList.add('show');
+      } catch {
+        btn.textContent = pt ? 'Enviar mensagem' : 'Send Message';
+        btn.disabled = false;
+        const err = document.getElementById('formError');
+        err.style.display = 'block';
+      }
     });
   </script>
 
