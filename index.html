@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Summer World — Management Consultancy</title>
-  <meta name="description" content="Summer World is a boutique management consultancy specialising in operational excellence, process redesign, and supply chain optimisation." />
+  <meta name="description" content="Summer World is a boutique management and AI consultancy based in Porto: process redesign, operational excellence and practical AI automation, from someone who runs AI in his own businesses every day." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -474,7 +474,7 @@
     /* ─────────────────────────────────────────
        SERVICES
     ───────────────────────────────────────── */
-    #services {
+    #services, #built {
       background: var(--white);
       padding: 9rem 5rem;
     }
@@ -864,7 +864,7 @@
       .about-visual { order: -1; max-width: 300px; margin: 0 auto; }
       .photo-caption { left: 0; right: auto; bottom: -1.5rem; }
 
-      #services { padding: 6rem 2rem; }
+      #services, #built { padding: 6rem 2rem; }
       .services-grid { grid-template-columns: 1fr; }
 
       #approach { padding: 6rem 2rem; }
@@ -903,6 +903,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="#about" onclick="closeMobile()">About</a>
     <a href="#services" onclick="closeMobile()">Services</a>
+    <a href="#built" onclick="closeMobile()">AI in Practice</a>
     <a href="#approach" onclick="closeMobile()">Approach</a>
     <a href="#contact" onclick="closeMobile()">Let's Talk</a>
   </div>
@@ -930,13 +931,14 @@
       </svg>
       <div class="brand-text">
         <span class="brand-name">Summer World</span>
-        <span class="brand-sub">Management Consultancy</span>
+        <span class="brand-sub">Management &amp; AI Consultancy</span>
       </div>
     </a>
 
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="#built">AI in Practice</a></li>
       <li><a href="#approach">Approach</a></li>
       <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
     </ul>
@@ -957,15 +959,15 @@
     </div>
 
     <div class="hero-content">
-      <p class="eyebrow" style="margin-bottom:1.5rem;">Management Consultancy</p>
+      <p class="eyebrow" style="margin-bottom:1.5rem;">Management Consultancy · AI-Native</p>
 
       <h1 class="hero-headline">
         Sharper operations.<br>
-        <em>Stronger results.</em>
+        <em>Put AI to work.</em>
       </h1>
 
       <p class="hero-body">
-        I help ambitious organisations redesign the way they work — eliminating friction, building resilience, and turning operational excellence into lasting competitive advantage.
+        I help organisations redesign the way they work, then put AI to work inside it: fewer manual steps, faster decisions, and teams freed up for the work that actually needs people.
       </p>
 
       <div class="hero-actions">
@@ -1021,6 +1023,9 @@
       <p class="about-body">
         With experience across manufacturing, logistics, financial services, and professional services, I bring a rigorous analytical lens and a deeply pragmatic approach to every engagement. No off-the-shelf frameworks. No junior analysts learning on your dime. Just focused, senior-level expertise applied to your most pressing operational challenges.
       </p>
+      <p class="about-body">
+        I don't just advise on AI, I run it. Across the businesses I operate, AI handles guest communication, research, content, quality checks and reporting every day. That hands-on experience is what I bring to clients: knowing what works in practice, what it costs, and where people still need to stay in the loop.
+      </p>
 
       <!-- ── PERSONALISE: replace with your name ── -->
       <div class="about-sig">
@@ -1047,14 +1052,37 @@
   <section id="services">
     <div class="section-hd reveal">
       <p class="eyebrow" style="justify-content:center;">What I Do</p>
-      <h2>Practical expertise across your most critical operational challenges</h2>
+      <h2>Operational expertise, with AI built in from day one</h2>
     </div>
 
     <div class="services-grid">
 
-      <!-- 01 -->
+      <!-- AI 01 -->
       <div class="svc reveal">
         <span class="svc-num">01</span>
+        <svg class="svc-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="12" y="12" width="20" height="20" rx="2" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M17 6v6M22 6v6M27 6v6M17 32v6M22 32v6M27 32v6M6 17h6M6 22h6M6 27h6M32 17h6M32 22h6M32 27h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="22" cy="22" r="3" fill="currentColor"/>
+        </svg>
+        <h3 class="svc-title">AI Strategy &amp; Readiness</h3>
+        <p class="svc-desc">Where AI will actually pay off in your organisation, and where it won't. I map your processes, rank the opportunities by value and risk, choose the right tools, and build a realistic rollout plan your team can own.</p>
+      </div>
+
+      <!-- AI 02 -->
+      <div class="svc reveal reveal-delay-1">
+        <span class="svc-num">02</span>
+        <svg class="svc-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 22h8l4-8 6 16 4-8h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <circle cx="8" cy="22" r="2" fill="currentColor"/><circle cx="36" cy="22" r="2" fill="currentColor"/>
+        </svg>
+        <h3 class="svc-title">AI Process Automation</h3>
+        <p class="svc-desc">Designing and implementing AI assistants and automated workflows for customer service, back office, research and reporting, with clear checks and human sign-off where it matters. Built to run, not to demo.</p>
+      </div>
+
+      <!-- 01 -->
+      <div class="svc reveal">
+        <span class="svc-num">03</span>
         <svg class="svc-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M8 36V8h28v28H8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
           <path d="M8 16h28M16 8v28" stroke="currentColor" stroke-width="1.5"/>
@@ -1066,7 +1094,7 @@
 
       <!-- 02 -->
       <div class="svc reveal reveal-delay-1">
-        <span class="svc-num">02</span>
+        <span class="svc-num">04</span>
         <svg class="svc-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="22" cy="22" r="14" stroke="currentColor" stroke-width="1.5"/>
           <circle cx="22" cy="22" r="7"  stroke="currentColor" stroke-width="1.5"/>
@@ -1079,7 +1107,7 @@
 
       <!-- 03 -->
       <div class="svc reveal">
-        <span class="svc-num">03</span>
+        <span class="svc-num">05</span>
         <svg class="svc-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M6 32 C10 32 12 24 18 24 C24 24 26 32 32 32 C36 32 38 28 38 28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
           <path d="M6 20 C10 20 12 14 18 14 C24 14 26 20 32 20 C36 20 38 16 38 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
@@ -1094,7 +1122,7 @@
 
       <!-- 04 -->
       <div class="svc reveal reveal-delay-1">
-        <span class="svc-num">04</span>
+        <span class="svc-num">06</span>
         <svg class="svc-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M8 36L16 24l8 4 6-12 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
           <path d="M36 36H8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -1104,6 +1132,34 @@
         <p class="svc-desc">Translating operational improvements into measurable financial and strategic outcomes. I connect the operational and the commercial, ensuring your investment in improvement delivers to the bottom line.</p>
       </div>
 
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       AI IN PRACTICE
+  ═══════════════════════════════ -->
+  <section id="built">
+    <div class="section-hd reveal">
+      <p class="eyebrow" style="justify-content:center;">AI in Practice</p>
+      <h2>Built and running in my own businesses</h2>
+    </div>
+    <div class="services-grid">
+      <div class="svc reveal">
+        <h3 class="svc-title">AI guest operations</h3>
+        <p class="svc-desc">At One Fine BnB, a property management company, AI assistants answer guest messages around the clock, check new listings before they go live, and summarise what the team needs to act on. People handle the exceptions.</p>
+      </div>
+      <div class="svc reveal reveal-delay-1">
+        <h3 class="svc-title">An AI product for hosts</h3>
+        <p class="svc-desc">BnB Genius packages that experience as an AI assistant other hosts can use for guest communication and day-to-day operations, sold as a service.</p>
+      </div>
+      <div class="svc reveal">
+        <h3 class="svc-title">An AI-assisted publication</h3>
+        <p class="svc-desc">Oporto Weekly, a bilingual guide to what's on in Porto. AI gathers events from dozens of sources, checks them against the original pages, translates them and drafts the weekly newsletter, with editorial review before anything goes out.</p>
+      </div>
+      <div class="svc reveal reveal-delay-1">
+        <h3 class="svc-title">AI-assisted audits</h3>
+        <p class="svc-desc">STR Audits reviews short-term rental listings and turns the findings into a prioritised report. AI does the heavy analysis, and every report gets a human review before it's delivered.</p>
+      </div>
     </div>
   </section>
 
@@ -1125,17 +1181,17 @@
       <div class="step reveal reveal-delay-1">
         <div class="step-dot"><span class="step-num">02</span></div>
         <h4 class="step-title">Diagnose</h4>
-        <p class="step-desc">Rigorous root-cause analysis to surface the true constraints and identify the highest-leverage opportunities — not just the most obvious ones.</p>
+        <p class="step-desc">Rigorous root-cause analysis to surface the true constraints and the highest-leverage opportunities, including where AI can take work off people's plates and where it shouldn't.</p>
       </div>
       <div class="step reveal reveal-delay-2">
         <div class="step-dot"><span class="step-num">03</span></div>
         <h4 class="step-title">Design</h4>
-        <p class="step-desc">Co-creating solutions with your team. The people closest to the work shape the answer — which is why they'll actually implement it.</p>
+        <p class="step-desc">Co-creating the new process with your team, with AI designed in from the start rather than bolted on. The people closest to the work shape the answer, which is why they'll actually use it.</p>
       </div>
       <div class="step reveal reveal-delay-3">
         <div class="step-dot"><span class="step-num">04</span></div>
         <h4 class="step-title">Deploy</h4>
-        <p class="step-desc">Hands-on support through implementation and stabilisation, with a clear plan for embedding the change so performance gains become permanent.</p>
+        <p class="step-desc">Hands-on support through implementation, from setting up the AI tools to training your team, with a clear plan for embedding the change so the gains last.</p>
       </div>
     </div>
   </section>
@@ -1146,7 +1202,7 @@
   <section id="contact">
     <div class="contact-sticky reveal">
       <p class="eyebrow">Get In Touch</p>
-      <h2 class="contact-headline">Ready to unlock your operational potential?</h2>
+      <h2 class="contact-headline">Ready to put AI to work in your business?</h2>
       <p class="contact-body">
         Whether you're facing a specific challenge or simply want to explore whether we'd be a good fit, I'd love to hear from you. Every engagement starts with a straightforward conversation.
       </p>
@@ -1164,7 +1220,7 @@
           <path d="M10 2C7.24 2 5 4.24 5 7c0 3.9 5 11 5 11s5-7.1 5-11c0-2.76-2.24-5-5-5z" stroke="currentColor" stroke-width="1.4"/>
           <circle cx="10" cy="7" r="2" stroke="currentColor" stroke-width="1.4"/>
         </svg>
-        <span class="cd-text">Based in New York City — working globally</span>
+        <span class="cd-text">Based in Porto, Portugal · working globally</span>
       </div>
     </div>
 
@@ -1205,6 +1261,8 @@
               <label for="f-service">Area of Interest</label>
               <select id="f-service" name="service">
                 <option value="">Select a service…</option>
+                <option>AI Strategy &amp; Readiness</option>
+                <option>AI Process Automation</option>
                 <option>Process Redesign</option>
                 <option>Operational Excellence</option>
                 <option>Supply Chain Optimisation</option>
@@ -1230,7 +1288,7 @@
             <circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="1.5"/>
             <path d="M14 24l7 7 13-14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          <h4>Message received.</h4>
+          <h4>Almost there.</h4>
           <p>Thank you for reaching out — I'll be in touch shortly.</p>
         </div>
       </div>
@@ -1259,6 +1317,7 @@
     <ul class="footer-links">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="#built">AI in Practice</a></li>
       <li><a href="#approach">Approach</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -1312,20 +1371,17 @@
       btn.textContent = 'Sending…';
       btn.disabled = true;
 
-      try {
-        const body = new URLSearchParams(new FormData(form)).toString();
-        await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body,
-        });
-        form.style.display = 'none';
-        thanks.classList.add('show');
-      } catch {
-        btn.textContent = 'Send Message';
-        btn.disabled = false;
-        alert('Something went wrong. Please try emailing directly.');
-      }
+      // The site is on Vercel (no Netlify Forms), so the old POST to "/" returned 405 and
+      // messages were silently lost. Open the visitor's email app, addressed to Baris, instead.
+      const f = new FormData(form);
+      const subject = 'Summer World enquiry' + (f.get('service') ? ': ' + f.get('service') : '');
+      const body = [f.get('message'), '', '—', f.get('name'), f.get('company'), f.get('email')]
+        .filter((x) => x !== null && x !== undefined).join('\n');
+      window.location.href = 'mailto:baris@summerworld.club?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(body);
+      form.style.display = 'none';
+      thanks.querySelector('p').textContent = "Your email app should open with the message ready to send. If it doesn't, write to baris@summerworld.club.";
+      thanks.classList.add('show');
     });
   </script>
 
