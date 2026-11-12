@@ -1367,6 +1367,7 @@
     const wrap   = document.getElementById('contactFormWrap');
     const thanks = document.getElementById('formSuccess');
 
+    const formLoadedAt = Date.now();
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = form.querySelector('.fsubmit');
@@ -1376,6 +1377,8 @@
       const pt = document.documentElement.lang.startsWith('pt');
       const data = Object.fromEntries(new FormData(form).entries());
       data.lang = pt ? 'pt' : 'en';
+      data.elapsed = Date.now() - formLoadedAt; // anti-bot: real visitors take seconds to fill the form
+      data.js = 'sw1';
       try {
         const r = await fetch('/api/contact', {
           method: 'POST',
